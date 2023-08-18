@@ -22,10 +22,12 @@ class MainActivity : AppCompatActivity() {
         val editcall:EditText=findViewById(R.id.editText2)
         buttoncall.setOnClickListener { openCall(editcall.text.toString()) }
 
+        val buttoncalllog:Button=findViewById(R.id.button_calllog)
+        buttoncalllog.setOnClickListener { openCallLog() }
     }
 
-    fun openBrowser(url: String ){
-        Intent(Intent.ACTION_VIEW, Uri.parse(url)).also { startActivity(it) }
+    fun openBrowser(URL: String ){
+        Intent(Intent.ACTION_VIEW, Uri.parse(URL)).also { startActivity(it) }
     }
     fun openCall(call: String ){
         Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:$call")).also { startActivity(it) }
